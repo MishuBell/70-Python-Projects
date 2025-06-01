@@ -61,11 +61,49 @@ def Story1(win):
     SubmitButton = tkinter.Button(NewScreen, text="Submit", background="Blue", font=('Times', 12), command=lambda:final(NewScreen, Name.get(), game.get(), city.get(), player.get(), drink.get(), snack.get()))
     SubmitButton.place(x=150, y=270)
 
+def Story2(win):
+    def final(tl: tkinter.Toplevel, name, sports, City, playername, drinkname, snacks):
+
+        text = f'''
+            One day me and my friend {name} decided to play a {sports} game in {City}.
+            But we were not able to play. So, we went to the game and watched our favourite player {playername}.
+            We drank {drinkname} and also ate some {snacks} 
+            We really enjoyed it! We are looking forward to go again and enjoy '''
+        tl.geometry('500x550')
+        tkinter.Label(tl, text='Story:', wraplength=tl.winfo_width()).place(x=160,y=310)
+        tkinter.Label(tl, text=text, wraplength=tl.winfo_width()).place(x=0,y=330)
+
+    NewScreen = tkinter.Toplevel(win, bg='yellow')
+    NewScreen.title("A memorable day")
+    NewScreen.geometry('500x500')
+
+    tkinter.Label(NewScreen, text='Ambitions').place(x=100,y=0)
+    tkinter.Label(NewScreen, text='Name:').place(x=0,y=35)
+    tkinter.Label(NewScreen, text='Enter a game:').place(x=0,y=70)
+    tkinter.Label(NewScreen, text='Enter a city:').place(x=0,y=110)
+    tkinter.Label(NewScreen, text='Enter the name of a player:').place(x=0,y=150)
+    tkinter.Label(NewScreen, text='Enter the name of a drink').place(x=0,y=190)
+    tkinter.Label(NewScreen, text='Enter the name of a snack:').place(x=0,y=230)
+
+    Name = tkinter.Entry(NewScreen, width=17)
+    Name.place(x=250,y=35)
+    game = tkinter.Entry(NewScreen, width=17)
+    game.place(x=250,y=70)
+    city = tkinter.Entry(NewScreen, width=17)
+    city.place(x=250,y=105)
+    player = tkinter.Entry(NewScreen, width=17)
+    player.place(x=250, y=150)
+    drink = tkinter.Entry(NewScreen, width=17)
+    drink.place(x=250, y=190)
+    snack = tkinter.Entry(NewScreen, width=17)
+    snack.place(x=250,y=220)
+    SubmitButton = tkinter.Button(NewScreen, text="Submit", background="Blue", font=('Times', 12), command=lambda:final(NewScreen, Name.get(), game.get(), city.get(), player.get(), drink.get(), snack.get()))
+    SubmitButton.place(x=150, y=270)
 # Buttons
 Story1Button = tkinter.Button(Screen, text='A memorable day', font=("Times New Roman", 13),command=lambda: Story1(Screen),bg='Blue')
 Story1Button.place(x=140, y=90)
 
-Story2Button = tkinter.Button(Screen, text='Amibtions', font=("Times New Roman", 13),command=lambda: Story1(Screen),bg='Blue')
+Story2Button = tkinter.Button(Screen, text='Amibtions', font=("Times New Roman", 13),command=lambda: Story2(Screen),bg='Blue')
 Story2Button.place(x=150 ,y= 150)
 
 Screen.mainloop()
