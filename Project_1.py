@@ -23,7 +23,6 @@ Screen.config(bg="pink")
 tkinter.Label(Screen, text='PythonGeeks Mad Libs Generator').place(x=100, y=20)
 
 # Buttons
-#StoryButton1 = tkinter.Button(Screen, text='A memorable day', font=("Times New Roman",13))
 Story1Button = tkinter.Button(Screen, text='A memorable day', font=("Times New Roman", 13),command=lambda: Story1(Screen),bg='Blue')
 
 Story1Button.place(x=125, y=50)
