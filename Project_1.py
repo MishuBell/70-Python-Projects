@@ -24,10 +24,37 @@ tkinter.Label(Screen, text='PythonGeeks Mad Libs Generator').place(x=100, y=20)
 
 # Buttons
 Story1Button = tkinter.Button(Screen, text='A memorable day', font=("Times New Roman", 13),command=lambda: Story1(Screen),bg='Blue')
+Story1Button.place(x=140, y=90)
 
-Story1Button.place(x=125, y=50)
-
+Story2Button = tkinter.Button(Screen, text='Amibtions', font=("Times New Roman", 13),command=lambda: Story1(Screen),bg='Blue')
+Story2Button.place(x=150 ,y= 150)
 
 Screen.update()
 Screen.mainloop()
+
+            # def example(variableName: TypeHint)
+def Story1(win):
+    def final(tl: Toplevel, name, sports, City, playername, drinkname, snacks):
+
+        text = f'''
+            One day me and my friend {name} decided to play a {sports} game in {City}.
+            We wanted to watch {playername}.
+            We drank {drinkname} and also ate some {snacks} 
+            We really enjoyed! We are looking forward to go again and enjoy'''
+        tl.geometry(newGeometry='500x550')
+        Label(tl, text='Story:', wraplength=tl.winfo_width()).place(x=160,y=310)
+        Label(tl, text=text, wraplength=tl.winfo_width()).place(x=0,y=330)
+
+NewSceen = Toplevel(win, bg='yellow')
+NewScreen.title("A memorable day")
+NewSceen.geometry('500x500')
+
+Label(NewSceen, text='A memorable Day').place(x=100,y=0)
+Label(NewSceen, text='Name:').place(x=0,y=35)
+Label(NewSceen, text='Enter a game:').place(x=0,y=70)
+Label(NewSceen, text='Enter a city:').place(x=0,y=110)
+Label(NewSceen, text='Enter the name of a player:').place(x=0,y=150)
+Label(NewSceen, text='Enter the name of a drink').place(x=0,y=190)
+Label(NewSceen, text='Enter the name of a snack:').place(x=0,y=230)
+
 
